@@ -14,22 +14,6 @@ public class Match {
         this.guestGoals = guestGoals;
     }
 
-    public String getHomeName() {
-        return homeName;
-    }
-
-    public String getGuestName() {
-        return guestName;
-    }
-
-    public int getHomeGoals() {
-        return homeGoals;
-    }
-
-    public int getGuestGoals() {
-        return guestGoals;
-    }
-
     public int getGuestPoints() {
         if (guestGoals < homeGoals) {
             return 0;
@@ -49,4 +33,22 @@ public class Match {
             return 3;
         }
     }
+
+    public String getHomeName() {
+        return homeName;
+    }
+
+    public String getGuestName() {
+        return guestName;
+    }
+
+    public int getHomeGoals() {
+        return homeGoals;
+    }
+
+    public int getGuestGoals() {
+        return guestGoals;
+    }
+
+
 }

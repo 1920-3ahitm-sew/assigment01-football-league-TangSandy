@@ -8,9 +8,11 @@ public class League {
     private List<Team> teams = new ArrayList<>();
 
     public  void addMatchResult(Match match){
-        finOrCreateTeam(match.getHomeName()).addMatch(match);
-        finOrCreateTeam(match.getGuestName()).addMatch(match);
+        Team homeTeam = finOrCreateTeam(match.getHomeName());
+        homeTeam.addMatch(match);
 
+        Team guestTeam = finOrCreateTeam(match.getGuestName());
+        guestTeam.addMatch(match);
     }
 
     private  Team finOrCreateTeam(String team){

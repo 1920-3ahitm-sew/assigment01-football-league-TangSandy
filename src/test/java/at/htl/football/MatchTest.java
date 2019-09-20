@@ -1,12 +1,35 @@
 package at.htl.football;
 
-import org.junit.jupiter.api.MethodOrderer;
+
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-@TestMethodOrder(MethodOrderer.Alphanumeric.class)
-class MatchTest {
+import static org.hamcrest.CoreMatchers.is;
 
+public class MatchTest {
+    @Test
+    public void hometeam_win() {
+
+
+        Match match = new Match("Augsburg", "Stuttgart", 3, 1);
+
+        assertThat(match.getHomePoints(), is(3));
+        assertThat(match.getGuestPoints(), is(0));
+    }
+    @Test
+    public void guestteam_win() {
+        Match match = new Match("Augsburg", "Stuttgart", 1, 3);
+
+        assertThat(match.getHomePoints(), is(0));
+        assertThat(match.getGuestPoints(), is(3));
+    }
+
+    @Test
+    public void draw() {
+        Match match = new Match("Augsburg", "Stuttgart", 1, 1);
+
+        assertThat(match.getHomePoints(), is(1));
+        assertThat(match.getGuestPoints(), is(1));
+    }
 }
